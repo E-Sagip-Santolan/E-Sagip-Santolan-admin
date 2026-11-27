@@ -1,0 +1,318 @@
+.dashboard {
+  display: grid;
+  gap: 16px;
+}
+
+.sectionLabel {
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.welcomeRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: -8px 0 4px;
+}
+
+.welcomeRow h1 {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.welcomeRow p,
+.advisory p {
+  margin: 6px 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.quickActions {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.quickActions h2 {
+  margin: 0;
+  padding: 10px 16px;
+  background: var(--color-navy);
+  color: #fff;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.1em;
+}
+
+.quickActionList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 10px;
+}
+
+.quickActionList a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 8px;
+  border-radius: var(--radius-md);
+}
+
+.quickActionList a:hover {
+  background: var(--color-surface-subtle);
+}
+
+.quickActionList strong,
+.quickActionList small,
+.approvalList strong,
+.approvalList small,
+.operationName strong,
+.operationName small {
+  display: block;
+}
+
+.quickActionList strong,
+.approvalList strong,
+.operationName strong {
+  overflow: hidden;
+  font-size: var(--font-size-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quickActionList small,
+.approvalList small,
+.operationName small {
+  margin-top: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.625rem;
+}
+
+.actionIcon,
+.metricIcon,
+.operationIcon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.blue {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.green {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.orange {
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
+}
+
+.red {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.advisory {
+  border-color: #ffd1a6;
+  background: #fffaf5;
+}
+
+.textLink {
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.textLink:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metricCard {
+  min-height: 150px;
+}
+
+.metricIcon {
+  width: 34px;
+  height: 34px;
+}
+
+.metricIcon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.metricLabel {
+  margin: 12px 0 3px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.metricValue {
+  display: block;
+  color: #101725;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.metricFootnote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.readinessList {
+  display: grid;
+  gap: 14px;
+}
+
+.readinessList > div > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: var(--font-size-xs);
+}
+
+.readinessList strong {
+  font-weight: 600;
+}
+
+.readinessList span {
+  color: var(--color-text-muted);
+}
+
+.progress {
+  height: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: #edf1f7;
+}
+
+.progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #5ca2ff, var(--color-primary));
+}
+
+.approvalList {
+  display: grid;
+  gap: 4px;
+}
+
+.approvalList > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.approvalList > div:last-child {
+  border-bottom: 0;
+}
+
+.approvalList > div > span:nth-child(2) {
+  flex: 1;
+}
+
+.avatar {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: #e4efff;
+  color: #356fd8;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.operationList {
+  display: grid;
+}
+
+.operationRow {
+  display: grid;
+  grid-template-columns: 34px minmax(130px, 1fr) minmax(140px, 0.8fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.operationRow:last-child {
+  border-bottom: 0;
+}
+
+.operationIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  font-size: 16px;
+}
+
+.operationDate {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 760px) {
+  .quickActionList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .operationRow {
+    grid-template-columns: 32px minmax(120px, 1fr) auto;
+  }
+
+  .operationDate {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .welcomeRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .welcomeRow h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .quickActionList {
+    grid-template-columns: 1fr;
+  }
+
+  .metricGrid {
+    grid-template-columns: 1fr;
+  }
+}

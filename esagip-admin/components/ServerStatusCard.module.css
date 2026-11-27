@@ -1,0 +1,49 @@
+.content {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 9px;
+}
+
+.indicator {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+.waiting {
+  background: #93a2b9;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.connected {
+  background: var(--color-success);
+  box-shadow: 0 0 0 3px var(--color-success-soft);
+}
+
+.error {
+  background: var(--color-danger);
+  box-shadow: 0 0 0 3px var(--color-danger-soft);
+}
+
+.content p {
+  flex: 1;
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  overflow-wrap: anywhere;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .waiting {
+    animation: none;
+  }
+}

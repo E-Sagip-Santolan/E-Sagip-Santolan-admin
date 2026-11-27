@@ -67,7 +67,7 @@ export default function DashboardPage() {
             <MetricIcon type={metric.icon} tone={metric.tone} />
             <p className={styles.metricLabel}>{metric.label}</p>
             <strong className={styles.metricValue}>{metric.value}</strong>
-            <span className={styles.metricFootnote}><Badge variant="success">LIVE</Badge> Payload data</span>
+            <span className={styles.metricFootnote}><Badge variant="success">LIVE</Badge></span>
           </Card>
         ))}
       </div>

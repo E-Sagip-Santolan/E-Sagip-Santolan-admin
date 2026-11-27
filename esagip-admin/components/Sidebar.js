@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "@/components/Icon";
@@ -22,7 +23,9 @@ export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <Link className={styles.brand} href="/dashboard" aria-label="E-Sagip admin portal home">
-        <span className={styles.logo} aria-hidden="true"><span>ES</span></span>
+        <span className={styles.logo} aria-hidden="true">
+          <Image src="/e-sagip-logo.svg" alt="" width={36} height={36} />
+        </span>
         <span className={styles.brandWords}><strong>E-Sagip</strong><small>ADMIN PORTAL</small></span>
       </Link>
       <div className={styles.groupLabel}>WORKSPACE</div>

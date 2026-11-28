@@ -5,37 +5,72 @@
   display: grid;
   place-items: center;
   padding: 20px;
-  background: rgb(15 31 56 / 48%);
+  background: rgb(15 23 42 / 52%);
 }
 
 .dialog {
-  width: min(100%, 520px);
-  max-height: min(90vh, 760px);
+  width: min(100%, 540px);
+  max-height: min(92vh, 840px);
   overflow: auto;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);
-  box-shadow: 0 20px 60px rgb(13 31 58 / 20%);
+  box-shadow: 0 24px 64px rgb(13 31 58 / 24%);
+}
+
+.wide {
+  width: min(100%, 720px);
 }
 
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 18px;
+  padding: 18px 22px;
   border-bottom: 1px solid var(--color-border);
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.iconBadge {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.iconBadge svg {
+  width: 18px;
+  height: 18px;
 }
 
 .header h2 {
   margin: 0;
   font-size: var(--font-size-lg);
+  line-height: 1.25;
+}
+
+.subtitle {
+  margin: 3px 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
 }
 
 .close {
   display: grid;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
   place-items: center;
   border: 0;
   border-radius: var(--radius-sm);
@@ -43,6 +78,7 @@
   color: var(--color-text-secondary);
   cursor: pointer;
   font-size: 22px;
+  line-height: 1;
 }
 
 .close:hover {
@@ -50,5 +86,5 @@
 }
 
 .body {
-  padding: 18px;
+  padding: 20px 22px 22px;
 }

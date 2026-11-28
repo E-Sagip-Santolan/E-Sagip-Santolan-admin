@@ -1,0 +1,17 @@
+[
+  { "id": 1, "name": "Relief Goods Packing", "category": "Logistics & Relief Operations" },
+  { "id": 2, "name": "Donation Sorting", "category": "Logistics & Relief Operations" },
+  { "id": 3, "name": "Inventory & Listing", "category": "Logistics & Relief Operations" },
+  { "id": 4, "name": "Debris Clearing & Heavy Lifting", "category": "Physical Labor & Clean-Up" },
+  { "id": 5, "name": "Mud Clearing & Sweeping", "category": "Physical Labor & Clean-Up" },
+  { "id": 6, "name": "Basic Carpentry", "category": "Physical Labor & Clean-Up" },
+  { "id": 7, "name": "Community Kitchen / Cooking", "category": "Community Support & Welfare" },
+  { "id": 8, "name": "Crowd Control & Ushering", "category": "Community Support & Welfare" },
+  { "id": 9, "name": "Child & Elderly Care", "category": "Community Support & Welfare" },
+  { "id": 10, "name": "Basic First Aid / CPR", "category": "Medical & First Aid" },
+  { "id": 11, "name": "Medical Professional", "category": "Medical & First Aid" },
+  { "id": 12, "name": "Psychological First Aid", "category": "Medical & First Aid" },
+  { "id": 13, "name": "Driver (4-Wheel / Truck / Van)", "category": "Transport & Technical" },
+  { "id": 14, "name": "Basic Electrical / Wiring Safety", "category": "Transport & Technical" },
+  { "id": 15, "name": "Boat / Bangka Operator", "category": "Transport & Technical" }
+]

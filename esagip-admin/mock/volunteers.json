@@ -1,0 +1,108 @@
+[
+  {
+    "id": 101,
+    "name": "Carla Mendoza",
+    "email": "carla.mendoza@example.test",
+    "contact_number": "09170000101",
+    "address_area": "Zone 1, Sgt. de Leon St., Santolan",
+    "birthdate": "2002-05-14",
+    "is_resident": true,
+    "status": "pending",
+    "is_active": true,
+    "rejection_reason": null,
+    "approved_by": null,
+    "approved_at": null,
+    "availability": "available",
+    "training": "BDRRMC Basic Orientation (2025)",
+    "skills": [
+      { "id": 1, "name": "Relief Goods Packing", "category": "Logistics & Relief Operations" },
+      { "id": 3, "name": "Inventory & Listing", "category": "Logistics & Relief Operations" }
+    ],
+    "created_at": "2026-11-17T23:30:00+08:00"
+  },
+  {
+    "id": 102,
+    "name": "Miguel Garcia",
+    "email": "miguel.garcia@example.test",
+    "contact_number": "09170000102",
+    "address_area": "Zone 1, Evangelista St., Santolan",
+    "birthdate": "1998-05-14",
+    "is_resident": true,
+    "status": "approved",
+    "is_active": true,
+    "rejection_reason": null,
+    "approved_by": 1,
+    "approved_at": "2026-11-18T09:15:00+08:00",
+    "availability": "unavailable",
+    "training": "Red Cross Basic First Aid (2025)",
+    "skills": [
+      { "id": 13, "name": "Driver (4-Wheel / Truck / Van)", "category": "Transport & Technical" },
+      { "id": 4, "name": "Debris Clearing & Heavy Lifting", "category": "Physical Labor & Clean-Up" },
+      { "id": 10, "name": "Basic First Aid / CPR", "category": "Medical & First Aid" }
+    ],
+    "created_at": "2026-11-17T23:30:00+08:00"
+  },
+  {
+    "id": 103,
+    "name": "Ana Reyes",
+    "email": "ana.reyes@example.test",
+    "contact_number": "09170000103",
+    "address_area": "Zone 2, Tawiran St., Santolan",
+    "birthdate": "1999-08-22",
+    "is_resident": true,
+    "status": "pending",
+    "is_active": true,
+    "rejection_reason": null,
+    "approved_by": null,
+    "approved_at": null,
+    "availability": "available",
+    "training": "Community Psychological First Aid (2025)",
+    "skills": [
+      { "id": 11, "name": "Medical Professional", "category": "Medical & First Aid" },
+      { "id": 12, "name": "Psychological First Aid", "category": "Medical & First Aid" }
+    ],
+    "created_at": "2026-11-17T23:30:00+08:00"
+  },
+  {
+    "id": 104,
+    "name": "Juan Dela Cruz",
+    "email": "juan.delacruz@example.test",
+    "contact_number": "09170000104",
+    "address_area": "Zone 3, F. Mariano Ave., Santolan",
+    "birthdate": "2000-03-11",
+    "is_resident": true,
+    "status": "approved",
+    "is_active": true,
+    "rejection_reason": null,
+    "approved_by": 1,
+    "approved_at": "2026-11-18T10:00:00+08:00",
+    "availability": "on_operation",
+    "training": "Water Search and Rescue Basic (2024)",
+    "skills": [
+      { "id": 15, "name": "Boat / Bangka Operator", "category": "Transport & Technical" },
+      { "id": 2, "name": "Donation Sorting", "category": "Logistics & Relief Operations" }
+    ],
+    "created_at": "2026-11-17T23:30:00+08:00"
+  },
+  {
+    "id": 105,
+    "name": "Maria Santos",
+    "email": "maria.santos@example.test",
+    "contact_number": "09170000105",
+    "address_area": "Zone 2, Amang Rodriguez Ave., Santolan",
+    "birthdate": "2001-11-02",
+    "is_resident": true,
+    "status": "approved",
+    "is_active": true,
+    "rejection_reason": null,
+    "approved_by": 2,
+    "approved_at": "2026-11-18T11:20:00+08:00",
+    "availability": "available",
+    "training": "Red Cross Basic First Aid (2025)",
+    "skills": [
+      { "id": 10, "name": "Basic First Aid / CPR", "category": "Medical & First Aid" },
+      { "id": 1, "name": "Relief Goods Packing", "category": "Logistics & Relief Operations" }
+    ],
+    "created_at": "2026-11-17T23:30:00+08:00"
+  }
+]

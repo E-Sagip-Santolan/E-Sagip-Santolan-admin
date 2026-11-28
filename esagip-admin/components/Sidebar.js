@@ -3,34 +3,51 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/components/AuthProvider";
 import Icon from "@/components/Icon";
+import { can } from "@/lib/auth";
 import styles from "./Sidebar.module.css";
 
 const workspaceLinks = [
-  { label: "Dashboard", href: "/dashboard", icon: "dashboard" },
-  { label: "Volunteers", href: "/volunteers", icon: "users", count: "2" },
-  { label: "Operations", href: "/operations", icon: "operations" },
-  { label: "Attendance", href: "/attendance", icon: "attendance" },
-  { label: "Community", href: "/community", icon: "community" },
-  { label: "Reports", href: "/reports", icon: "reports" },
+  { label: "Dashboard", href: "/dashboard", icon: "dashboard", permission: null },
+  { label: "Volunteers", href: "/volunteers", icon: "users", showPendingBadge: true, permission: "volunteer_approvals" },
+  { label: "Operations", href: "/operations", icon: "operations", permission: "operation_management" },
+  { label: "Attendance", href: "/attendance", icon: "attendance", permission: "attendance_confirmation" },
+  { label: "Community", href: "/community", icon: "community", permission: "community_publishing" },
+  { label: "Reports", href: "/reports", icon: "reports", permission: "reports_exports" },
 ];
 
 const adminLinks = [
-  { label: "RBAC", href: "/rbac", icon: "access" },
-  { label: "Activity Logs", href: "/activity-logs", icon: "logs" },
+  { label: "RBAC", href: "/rbac", icon: "access", permission: "superadmin_only" },
+  { label: "Activity Logs", href: "/activity-logs", icon: "logs", permission: "activity_logs" },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { user, pendingVolunteerCount } = useAuth();
+
+  const visibleWorkspace = workspaceLinks.filter((item) => can(item.permission, user));
+  const visibleAdmin = adminLinks.filter((item) => can(item.permission, user));
 
   const renderLinks = (items) =>
     items.map((link) => {
       const active = pathname === link.href;
+      const badgeCount =
+        link.showPendingBadge && typeof pendingVolunteerCount === "number" && pendingVolunteerCount > 0
+          ? String(pendingVolunteerCount)
+          : null;
       return (
-        <Link className={`${styles.link} ${active ? styles.active : ""}`} href={link.href} key={link.href} aria-label={link.label} aria-current={active ? "page" : undefined} title={link.label}>
+        <Link
+          className={`${styles.link} ${active ? styles.active : ""}`}
+          href={link.href}
+          key={link.href}
+          aria-label={link.label}
+          aria-current={active ? "page" : undefined}
+          title={link.label}
+        >
           <Icon name={link.icon} className={styles.icon} />
           <span className={styles.linkLabel}>{link.label}</span>
-          {link.count && <span className={styles.count}>{link.count}</span>}
+          {badgeCount && <span className={styles.count}>{badgeCount}</span>}
         </Link>
       );
     });
@@ -45,12 +62,16 @@ export default function Sidebar() {
       </Link>
       <div className={styles.groupLabel}>WORKSPACE</div>
       <nav className={styles.nav} aria-label="Workspace navigation">
-        {renderLinks(workspaceLinks)}
+        {renderLinks(visibleWorkspace)}
       </nav>
-      <div className={styles.groupLabel}>ADMINISTRATION</div>
-      <nav className={styles.nav} aria-label="Administration navigation">
-        {renderLinks(adminLinks)}
-      </nav>
+      {visibleAdmin.length > 0 && (
+        <>
+          <div className={styles.groupLabel}>ADMINISTRATION</div>
+          <nav className={styles.nav} aria-label="Administration navigation">
+            {renderLinks(visibleAdmin)}
+          </nav>
+        </>
+      )}
       <div className={styles.version}><span>System version</span><strong>v2.5.0</strong></div>
     </aside>
   );

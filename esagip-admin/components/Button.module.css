@@ -44,6 +44,26 @@
   background: var(--color-primary-soft);
 }
 
+.success {
+  background: #16a34a;
+  box-shadow: 0 3px 8px rgb(22 163 74 / 20%);
+  color: #fff;
+}
+
+.success:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.danger {
+  border-color: #fecaca;
+  background: #fff5f5;
+  color: #dc2626;
+}
+
+.danger:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
 .small {
   min-height: 30px;
   padding: 0 10px;

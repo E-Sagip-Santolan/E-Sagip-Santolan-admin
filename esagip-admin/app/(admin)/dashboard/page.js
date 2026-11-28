@@ -1,6 +1,7 @@
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import DashboardGreeting from "@/components/DashboardGreeting";
 import Icon from "@/components/Icon";
 import ServerStatusCard from "@/components/ServerStatusCard";
 import Link from "next/link";
@@ -42,7 +43,7 @@ export default function DashboardPage() {
       <div className={styles.sectionLabel}>COMMAND OVERVIEW</div>
       <div className={styles.welcomeRow}>
         <div>
-          <h1>Mabuhay, Admin!</h1>
+          <DashboardGreeting />
           <p>Here&apos;s the current response picture for Barangay Santolan.</p>
         </div>
         <Button leadingIcon={<Icon name="plus" className={styles.buttonIcon} />}>Create operation</Button>

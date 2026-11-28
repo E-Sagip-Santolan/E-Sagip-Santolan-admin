@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useAuth } from "@/components/AuthProvider";
+import { getInitials } from "@/lib/rbac";
 import styles from "./Header.module.css";
 
 const titles = {
@@ -13,11 +14,20 @@ const titles = {
   "/reports": "Reports",
   "/rbac": "RBAC",
   "/activity-logs": "Activity Logs",
+  "/no-access": "No Access",
 };
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { user, signOut } = useAuth();
   const title = titles[pathname] || "Dashboard";
+  const initials = getInitials(user?.name || "Admin");
+
+  async function handleSignOut() {
+    await signOut();
+    router.replace("/signin");
+  }
 
   return (
     <header className={styles.header}>
@@ -34,7 +44,12 @@ export default function Header() {
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-8 12h4" /></svg>
           <i />
         </button>
-        <Link className={styles.profile} href="/rbac" aria-label="Administrator profile">RC</Link>
+        <span className={styles.profile} title={user ? `${user.name} (${user.role})` : "Administrator"}>
+          {initials}
+        </span>
+        <button className={styles.signOutBtn} type="button" onClick={handleSignOut}>
+          Sign out
+        </button>
       </div>
     </header>
   );

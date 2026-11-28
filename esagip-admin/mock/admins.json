@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Ramon Cruz",
+    "email": "superadmin@example.test",
+    "role": "superadmin",
+    "is_active": true,
+    "permissions": [
+      "volunteer_approvals",
+      "operation_management",
+      "attendance_confirmation",
+      "community_publishing",
+      "reports_exports",
+      "activity_logs"
+    ],
+    "created_at": "2026-11-01T08:00:00+08:00"
+  },
+  {
+    "id": 2,
+    "name": "Liza Ramos",
+    "email": "admin@example.test",
+    "role": "admin",
+    "is_active": true,
+    "permissions": [
+      "volunteer_approvals",
+      "operation_management",
+      "attendance_confirmation"
+    ],
+    "created_at": "2026-11-02T10:00:00+08:00"
+  },
+  {
+    "id": 3,
+    "name": "Marco Villanueva",
+    "email": "auditor@example.test",
+    "role": "admin",
+    "is_active": true,
+    "permissions": [
+      "reports_exports",
+      "activity_logs"
+    ],
+    "created_at": "2026-11-05T14:30:00+08:00"
+  }
+]

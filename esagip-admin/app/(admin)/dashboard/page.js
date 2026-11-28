@@ -1,6 +1,7 @@
 import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import Icon from "@/components/Icon";
 import ServerStatusCard from "@/components/ServerStatusCard";
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -44,21 +45,30 @@ export default function DashboardPage() {
           <h1>Mabuhay, Admin!</h1>
           <p>Here&apos;s the current response picture for Barangay Santolan.</p>
         </div>
-        <Button leadingIcon={<span aria-hidden="true">＋</span>}>Create operation</Button>
+        <Button leadingIcon={<Icon name="plus" className={styles.buttonIcon} />}>Create operation</Button>
       </div>
 
       <section className={styles.quickActions} aria-label="Quick actions">
         <h2>QUICK ACTIONS</h2>
         <div className={styles.quickActionList}>
-          <Link href="/operations"><span className={`${styles.actionIcon} ${styles.blue}`}>＋</span><span><strong>Create operation</strong><small>Schedule a response</small></span></Link>
-          <Link href="/attendance"><span className={`${styles.actionIcon} ${styles.green}`}>✓</span><span><strong>Attendance console</strong><small>Open duty console</small></span></Link>
-          <Link href="/volunteers"><span className={`${styles.actionIcon} ${styles.orange}`}>♙</span><span><strong>Review pending IDs</strong><small>2 awaiting review</small></span></Link>
-          <Link href="/community"><span className={`${styles.actionIcon} ${styles.red}`}>⚑</span><span><strong>Post advisory</strong><small>Notify the community</small></span></Link>
+          <Link href="/operations"><span className={`${styles.actionIcon} ${styles.blue}`}><Icon name="plus" /></span><span><strong>Create operation</strong><small>Schedule a response</small></span></Link>
+          <Link href="/attendance"><span className={`${styles.actionIcon} ${styles.green}`}><Icon name="key" /></span><span><strong>Attendance code</strong><small>Open duty console</small></span></Link>
+          <Link href="/volunteers"><span className={`${styles.actionIcon} ${styles.orange}`}><Icon name="users" /></span><span><strong>Review IDs</strong><small>2 awaiting review</small></span></Link>
+          <Link href="/community"><span className={`${styles.actionIcon} ${styles.red}`}><Icon name="community" /></span><span><strong>Post advisory</strong><small>Notify the community</small></span></Link>
         </div>
       </section>
 
-      <Card className={styles.advisory} title="Orange Rainfall Warning" action={<Link href="/community" className={styles.textLink}>View advisory</Link>}>
-        <p>Moderate to heavy rainfall is expected within the next three hours. Residents near waterways should remain alert and prepare emergency kits.</p>
+      <Card className={styles.advisory}>
+        <div className={styles.advisoryRow}>
+          <span className={`${styles.actionIcon} ${styles.orange}`} aria-hidden="true">
+            <Icon name="community" />
+          </span>
+          <div className={styles.advisoryCopy}>
+            <h2>Orange Rainfall Warning</h2>
+            <p>Moderate to heavy rainfall is expected within the next three hours. Residents near waterways should remain alert and prepare emergency kits.</p>
+          </div>
+          <Link href="/community" className={styles.advisoryLink}>View advisory</Link>
+        </div>
       </Card>
 
       <div className={styles.metricGrid}>
@@ -83,8 +93,8 @@ export default function DashboardPage() {
 
       <Card title="Approval queue" subtitle="New volunteer accounts awaiting review" action={<Link href="/volunteers" className={styles.textLink}>Review all</Link>}>
         <div className={styles.approvalList}>
-          <div><span className={styles.avatar}>CM</span><span><strong>Carla Mendoza</strong><small>Relief, Encoding</small></span><Badge variant="success">Ready</Badge></div>
-          <div><span className={styles.avatar}>AR</span><span><strong>Ana Reyes</strong><small>Medical, Counseling</small></span><Badge variant="success">Ready</Badge></div>
+          <div><span className={styles.avatar}>CM</span><span><strong>Carla Mendoza</strong><small>Relief, Encoding</small></span><Link href="/volunteers" className={styles.approveAction} aria-label="Review Carla Mendoza"><Icon name="check" /></Link></div>
+          <div><span className={styles.avatar}>AR</span><span><strong>Ana Reyes</strong><small>Medical, Counseling</small></span><Link href="/volunteers" className={styles.approveAction} aria-label="Review Ana Reyes"><Icon name="check" /></Link></div>
         </div>
       </Card>
 
@@ -92,7 +102,7 @@ export default function DashboardPage() {
         <div className={styles.operationList}>
           {operations.map((operation) => (
             <div className={styles.operationRow} key={operation.name}>
-              <span className={styles.operationIcon} aria-hidden="true">▣</span>
+              <span className={styles.operationIcon} aria-hidden="true"><Icon name="operations" /></span>
               <span className={styles.operationName}><strong>{operation.name}</strong><small>{operation.location}</small></span>
               <span className={styles.operationDate}>{operation.date}</span>
               <Badge variant={operation.status === "Cancelled" ? "danger" : "warning"}>{operation.status}</Badge>

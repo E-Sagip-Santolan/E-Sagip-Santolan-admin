@@ -107,6 +107,17 @@
   font-weight: 600;
 }
 
+.actionIcon svg,
+.operationIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.buttonIcon {
+  width: 14px;
+  height: 14px;
+}
+
 .blue {
   color: var(--color-primary);
   background: var(--color-primary-soft);
@@ -130,6 +141,56 @@
 .advisory {
   border-color: #ffd1a6;
   background: #fffaf5;
+}
+
+.advisoryRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.advisoryCopy {
+  flex: 1;
+  min-width: 0;
+}
+
+.advisoryCopy h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.advisoryLink {
+  color: #c76714;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.advisoryLink:hover {
+  text-decoration: underline;
+}
+
+.approveAction {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--color-success-soft);
+  color: var(--color-success);
+  transition: background-color 120ms ease;
+}
+
+.approveAction:hover {
+  background: #d5f3e2;
+}
+
+.approveAction svg {
+  width: 15px;
+  height: 15px;
 }
 
 .textLink {
